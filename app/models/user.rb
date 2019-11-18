@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :grills
-  # validates :last_name, presence: true
-  # validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
 end
