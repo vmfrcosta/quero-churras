@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    
   end
 
   def edit
@@ -17,7 +17,12 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
+  def configure_permitted_parameters
+    # For additional fields in app/views/devise/registrations/new.html.erb
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
 
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
   end
+end
 end
