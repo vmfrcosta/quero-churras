@@ -15,6 +15,7 @@ class GrillsController < ApplicationController
 
   def create
     @grill = Grill.new(grill_params)
+    @grill.status = true
     @grill.user = current_user
     if @grill.save
       redirect_to grills_path
