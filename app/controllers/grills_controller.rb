@@ -30,13 +30,16 @@ class GrillsController < ApplicationController
   end
 
   def update
-    @grill.update(grill_params)
-    redirect_to my_grills_path(@grill)
+    if @grill.update(grill_params)
+      redirect_to grills_path(@grill)
+    else
+      render :new
+    end
   end
 
   def destroy
     @grill.destroy
-    redirect_to my_grills_path
+    redirect_to grills_path
   end
 
   private

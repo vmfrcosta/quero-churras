@@ -4,26 +4,21 @@
 
     <%@grills.each do |grill|%>
       <div class="card-description"><%=grill.name%></div>
-        <div class="containeredit">
-          <%= link_to "Edit your Grill", edit_grill_path(grill), class: "btn btn-primary" %>
-        </div>
+
+      <%= link_to "Edit your Grill", edit_grill_path(grill), class: "btn btn-primary" %>
 
       <p></p>
 
-      <div class="containeredit">
-        <%= link_to "destroy grill", grill_path(grill),
+      <%= link_to "destroy grill", grill_path(grill),
           method: :delete,
           data: { confirm: "Are you sure?" },
           class: "btn btn-danger rounded" %>
-      </div>
     <% end %>
 
-  <p></p>
+  <p>
 
-  <div class="containeradd">
     <%= link_to "Add your Grill", new_grill_path, class: "btn btn-primary" %>
-  </div>
 
-  <p></p>
+  </p>
 
 </div>
