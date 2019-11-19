@@ -5,23 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Grill.destroy_all
 Booking.destroy_all
 
 10.times do |i|
   grill = Grill.new(
-  	name: "churrasqueira #{i}",
-  	description: "descrição #{i}",
-    address: "Endereço #{i}"
-    price: i
-    status: true
-  	)
+    name: "churrasqueira #{i}",
+    description: "descrição #{i}",
+    address: "Endereço #{i}",
+    price: i,
+    status: true,
+    grills_type: true,
+    user: User.find(1)
+    )
+  grill.save
 
   booking = Booking.new(
-  	user: User.find(1),
-  	grill: grill,
-  	check_in: Date.today,
-  	check_out: Date.today,
-  	address: "Endereço #{i * 10}")
+    user: User.find(1),
+    grill: grill,
+    check_in: Date.today,
+    check_out: Date.today,
+    address: "Endereço #{i * 10}")
+  booking.save
 end
