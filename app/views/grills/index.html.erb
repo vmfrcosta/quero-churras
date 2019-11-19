@@ -1,0 +1,24 @@
+  <div class="container">
+
+  <h1 class="container">Grills</h1>
+
+  <div class="container">
+    <%@grills.each do |grill|%>
+      <div class="card-description"><%=grill%></div>
+          <h2> <%= grill.name  %> </h2>
+        </div>
+        <%= link_to "", grill_path(grill), class: "card-link" %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <%= link_to "Add your Grill", new_grill_path, class: "btn btn-primary" %>
+  </div>
+
+  <p></p>
+
+  <div class="container">
+    <%= link_to "Show my Grills", "#", class: "btn btn-primary" %>
+  </div>
+
+</div>
