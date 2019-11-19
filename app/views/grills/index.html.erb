@@ -1,19 +1,19 @@
-  <div class="container">
 
-  <h1 class="container">All Grills</h1>
-
-  <p></p>
-
-  <div class="container">
-    <%@grills.each do |grill|%>
-      <div class="card-description"><%=grill.name%></div>
+<div class="container">
+<h1>All Grills</h1>
+<p>
+<%= link_to "Add a new grill", new_grill_path(@grill) %>
+</p>
+  <div class="row">
+    <% @grills.each do |grill| %>
+      <div class="col-xs-12 col-md-4">
+        <h2> <%= grill.name %> </h2>
+        <h4> <%= grill.grills_type %> | <%= grill.address %> </h4>
+        <br>
+        <%= link_to "Show |", grill_path(grill) %>
+        <%= link_to "Edit |", edit_grill_path(grill) %>
+        <%= link_to "Delete", grill_path(grill), method: :delete %>
+      </div>
     <% end %>
   </div>
-
-  <p></p>
-
-  <div class="container">
-    <%= link_to "Show my Grills", my_grills_path, class: "btn btn-primary" %>
-  </div>
-
 </div>
