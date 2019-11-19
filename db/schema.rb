@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_214620) do
     t.string "name"
     t.string "description"
     t.string "address"
-    t.string "type"
+    t.string "grills_type"
     t.integer "price"
     t.boolean "status"
   end

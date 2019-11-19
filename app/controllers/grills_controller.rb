@@ -41,7 +41,7 @@ class GrillsController < ApplicationController
       :name,
       :description,
       :address,
-      :banana,
+      :grills_type,
       :price,
       :status
     )
