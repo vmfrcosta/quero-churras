@@ -1,13 +1,10 @@
   <div class="container">
 
-  <h1 class="container">Grills</h1>
+  <h1 class="container">Your Grills</h1>
 
   <div class="container">
     <%@grills.each do |grill|%>
-      <div class="card-description"><%=grill%></div>
-          <h2> <%= grill.name  %> </h2>
-        </div>
-        <%= link_to "", grill_path(grill), class: "card-link" %>
+      <div class="card-description"><%=grill.name%></div>
     <% end %>
   </div>
 

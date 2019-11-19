@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_214620) do
+ActiveRecord::Schema.define(version: 2019_11_19_143646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.bigint "grill_id"
     t.text "address"
     t.date "check_in"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_214620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["grill_id"], name: "index_bookings_on_grill_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "grills", force: :cascade do |t|
@@ -33,9 +33,11 @@ ActiveRecord::Schema.define(version: 2019_11_18_214620) do
     t.string "name"
     t.string "description"
     t.string "address"
-    t.string "type"
+    t.string "grills_type"
     t.integer "price"
     t.boolean "status"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_grills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,5 +55,6 @@ ActiveRecord::Schema.define(version: 2019_11_18_214620) do
   end
 
   add_foreign_key "bookings", "grills"
-  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "grills", "users"
 end

@@ -11,8 +11,9 @@ class GrillsController < ApplicationController
 
   def create
     @grill = Grill.new(grill_params)
+    @grill.user = current_user
     if @grill.save
-      redirect_to grill_path
+      redirect_to grills_path
     else
       render :new
     end
@@ -41,7 +42,7 @@ class GrillsController < ApplicationController
       :name,
       :description,
       :address,
-      :banana,
+      :grills_type,
       :price,
       :status
     )

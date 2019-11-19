@@ -1,13 +1,13 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
       <% if @grill.photos.size != 0 %>
         <% picture_url = cl_image_path @grill.photos[0].path %>
       <% else %>
         <% picture_url = image_path('background.jpg') %>
       <% end %>
-    <%= render "card", grill: @grill, picture_url: picture_url %>
+    <%= render "card", grill: @grill, picture_url: picture_url %> -->
 
-      <div class="formulaire">
+      <div class="container">
         <%= simple_form_for([ @grill, @dose ]) do |form| %>
           <%= form.association :ingredient %>
           <%= form.input :description %>
