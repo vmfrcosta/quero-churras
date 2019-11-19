@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :set_grill
 
   def new
     @review = Review.new
@@ -19,5 +20,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:stars, :content)
+  end
+
+  def set_grill
+    @grill = Grill.find(params[:grill_id])
   end
 end
