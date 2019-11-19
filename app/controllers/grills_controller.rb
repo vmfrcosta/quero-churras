@@ -34,5 +34,4 @@ class GrillsController < ApplicationController
   def set_grill
     @grill = grill.find(params[:id])
   end
-
 end
