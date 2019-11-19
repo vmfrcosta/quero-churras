@@ -1,8 +1,12 @@
 class GrillsController < ApplicationController
-  before_action :set_grill, only: [:show, :edit, :update]
+  before_action :set_grill, only: [:show, :edit, :update, :destroy]
 
   def index
     @grills = Grill.all
+  end
+
+  def my_grills
+    @grills = Grill.where(user: current_user)
   end
 
   def new
@@ -27,12 +31,12 @@ class GrillsController < ApplicationController
 
   def update
     @grill.update(grill_params)
-    redirect_to grills_path(@grills)
+    redirect_to my_grills_path(@grill)
   end
 
   def destroy
     @grill.destroy
-    redirect_to grills_path
+    redirect_to my_grills_path
   end
 
   private

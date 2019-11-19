@@ -1,6 +1,8 @@
   <div class="container">
 
-  <h1 class="container">Your Grills</h1>
+  <h1 class="container">All Grills</h1>
+
+  <p></p>
 
   <div class="container">
     <%@grills.each do |grill|%>
@@ -8,14 +10,10 @@
     <% end %>
   </div>
 
-  <div class="container">
-    <%= link_to "Add your Grill", new_grill_path, class: "btn btn-primary" %>
-  </div>
-
   <p></p>
 
   <div class="container">
-    <%= link_to "Show my Grills", "#", class: "btn btn-primary" %>
+    <%= link_to "Show my Grills", my_grills_path, class: "btn btn-primary" %>
   </div>
 
 </div>
