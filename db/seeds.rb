@@ -11,12 +11,15 @@ Booking.destroy_all
 
 10.times do |i|
   grill = Grill.new(
+    user: User.find(1),
   	name: "churrasqueira #{i}",
   	description: "descrição #{i}",
-    address: "Endereço #{i}"
-    price: i
+    address: "Endereço #{i}",
+    price: i,
+    grills_type: true,
     status: true
   	)
+  grill.save
 
   booking = Booking.new(
   	user: User.find(1),
@@ -24,4 +27,6 @@ Booking.destroy_all
   	check_in: Date.today,
   	check_out: Date.today,
   	address: "Endereço #{i * 10}")
+  booking.save
+
 end
