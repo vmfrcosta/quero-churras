@@ -1,4 +1,5 @@
 class GrillsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_grill, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,6 +16,7 @@ class GrillsController < ApplicationController
 
   def create
     @grill = Grill.new(grill_params)
+    @grill.status = true
     @grill.user = current_user
     if @grill.save
       redirect_to grills_path
