@@ -1,0 +1,15 @@
+<div class="container d-flex justify-content-between mt-3">
+	<div class="grill">
+		<h1><%= @grill.name %></h1>
+		<div class="grill-info p-3">
+			<p>Description: <%= @grill.description %></p>
+			<p>Address: <%= @grill.address %></p>
+			<p>Type: <%= @grill.grills_type %></p>
+			<p>Price: R$ <%= @grill.price %></p>
+		</div>
+	</div>
+	<div class="mt-3 d-flex flex-column align-items-center">
+		<h3>Liked the grill? Book it now!</h3>
+		<%= render 'calendar' %>
+	</div>
+</div>
