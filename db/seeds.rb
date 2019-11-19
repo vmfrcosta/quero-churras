@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Grill.destroy_all
 Booking.destroy_all
 
@@ -28,5 +27,4 @@ Booking.destroy_all
   	check_out: Date.today,
   	address: "Endereço #{i * 10}")
   booking.save
-
 end
