@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-        
   end
 
   def edit
@@ -12,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
   end
 
   private
@@ -24,5 +22,4 @@ class UsersController < ApplicationController
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
   end
-end
 end
