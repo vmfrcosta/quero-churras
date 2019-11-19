@@ -31,7 +31,7 @@ class GrillsController < ApplicationController
 
   def update
     if @grill.update(grill_params)
-      redirect_to grills_path(@grill)
+      redirect_to grill_path(@grill)
     else
       render :new
     end
