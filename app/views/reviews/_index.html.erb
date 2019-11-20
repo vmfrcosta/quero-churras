@@ -1,5 +1,5 @@
 <h3>Reviews</h3>
-<%= link_to 'Leave a review!', new_grill_review_path %>
+<%= link_to 'Leave a review!', new_grill_review_path(@grill) %>
 <% @grill.reviews.each do |review| %>
 	<div class="card">
 		<h4>
