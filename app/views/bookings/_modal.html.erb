@@ -9,11 +9,26 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= 'booking info' %>
+        <div class="d-flex justify-content-around">
+          <p><strong>Check in:</strong></p>
+          <p id='modal-check-in'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Check out:</strong></p>
+          <p id='modal-check-out'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Address:</strong></p>
+          <p id='modal-address'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Final price:</strong></p>
+          <p id='modal-price'></p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Confirm</button>
+        <button type="button" class="btn btn-primary" method='post'>Confirm</button>
       </div>
     </div>
   </div>
