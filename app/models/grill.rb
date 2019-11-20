@@ -1,6 +1,6 @@
 class Grill < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
   has_many :bookings
+  has_many :photos
   belongs_to :user
   has_many :reviews
   validates :name, presence: true
