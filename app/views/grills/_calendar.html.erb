@@ -5,7 +5,7 @@
 	          <%= f.input :chech_in, as: :string, required: false, input_html: {class: "datepicker"} %>
 	          <%= f.input :check_out, as: :string, required: false, input_html: {class: "datepicker"} %>
 	          <%= f.input :address , as: :string %>
-	          <%= f.button :submit, "Reservar", class: "btn btn-primary" %>
+	          <%= f.button :submit, "Reservar", class: "btn btn-primary", data: { toggle: 'modal', target: '#bookingModal' }, id: 'submit-booking' %>
 	        <% end %>
     	</div>
 	</div>
