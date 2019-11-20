@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :set_grill
 
+  def index
+  end
+
   def new
     @review = Review.new
   end
