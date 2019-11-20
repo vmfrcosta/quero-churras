@@ -1,11 +1,11 @@
 <div class="bg">
   <div class="container">
-    <div class="row align-items-center">
-          <div class="col-sm-4 col-md-12 text-primary mt-5 pd-5">
+    <div class="align-items-center d-flex flex-column align-items-center">
             <h1>All Grills</h1>
+          <div class="row text-primary mt-5 pd-5">
             <% @grills.each do |grill| %>
 
-              <div class="card-trip mb-4">
+              <div class="col-sm-12 col-md-3 card-trip m-2">
                 <%= link_to grill_path(grill), class:"btn" do %>
                   <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
                 <% end %>
