@@ -1,5 +1,5 @@
-<div class="container  mt-3">
-	<div class="grill-info d-flex justify-content-between">
+<div class="container">
+	<div class="d-flex justify-content-around mt-3">
 		<div class="grill">
 			<h1><%= @grill.name %></h1>
 			<div class="grill-info p-3">
@@ -30,5 +30,20 @@
     height: 400px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+		<div class="mt-3 d-flex flex-column align-items-center">
+			<h3>Liked the grill? Book it now!</h3>
+			<%= render 'calendar' %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="review">
+		<%= render 'reviews/index' %>
+	</div>
 </div>
 
+<div class="container">
+	<div class="review">
+		<%= render 'reviews/modal' %>
+	</div>
+</div>

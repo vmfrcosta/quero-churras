@@ -45,6 +45,7 @@ class GrillsController < ApplicationController
     #     lng: grill.longitude
     #   }
     # end
+    @review = Review.new
   end
 
   def update

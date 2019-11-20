@@ -1,30 +1,28 @@
+<div class="bg">
+  <div class="container">
+    <div class="align-items-center d-flex flex-column align-items-center">
+            <h1>All Grills</h1>
+          <div class="row text-primary mt-5 pd-5">
+            <% @grills.each do |grill| %>
 
-<div class="container">
-<h1>All Grills</h1>
-<p>
-</p>
-  <div class="row">
-    <% @grills.each do |grill| %>
-     <!--  <div class="col-xs-12 col-md-4">
-        <h2> <%= grill.name %> </h2>
-        <h4> <%= grill.grills_type %> | <%= grill.address %> </h4>
-        <%= link_to "Edit |", edit_grill_path(grill) if current_user == grill.user %>
-        <%= link_to "Delete |", grill_path(grill), method: :delete if current_user == grill.user%>
+              <div class="col-sm-12 col-md-3 card-trip m-2">
+                <%= link_to grill_path(grill), class:"btn" do %>
+                  <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
+                <% end %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h4 class="card-title"><%= grill.name %> </h4>
+                    <h5 class="card-text"><%= grill.grills_type %> </h5>
+                    <p class="card-text"><%= grill.address %> </p>
+                  </div>
+                  <h2 class="card-trip-pricing"><%= grill.price %></h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                </div>
+              </div>
 
-      </div> -->
-      <div class="card" style="width: 18rem;">
-        <img src="https://www.campchef.com/media/catalog/product/cache/1/image/1200x675/e9c3970ab036de70892d86c6d221abfe/p/g/pg24sgwws_1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= grill.name %> </h5>
-          <p class="card-text"><%= grill.grills_type %> | <%= grill.address %> </p>
-          <%= link_to "Show", grill_path(grill), class:"btn btn-primary" %>
-        </div>
-      </div>
-    <% end %>
+            <% end %>
+            <%= link_to "Add a new grill", new_grill_path(@grill), class: "btn btn-primary"%>          
+          </div>
+    </div>
   </div>
 </div>
-<p></p>
-  <div class="container">
-<p>
-<%= link_to "Add a new grill", new_grill_path(@grill), class: "btn btn-primary"%>
-</p>
