@@ -1,4 +1,4 @@
 class Photo < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+  # mount_uploader :url, PhotoUploader
   belongs_to :grill
 end
