@@ -1,8 +1,10 @@
 class Grill < ApplicationRecord
   has_many :bookings
   has_many :photos, dependent: :destroy
+  has_many :reviews
+  
   belongs_to :user
-
+  
   validates :name, presence: true
   validates :description, presence: true
   validates :address, presence: true
