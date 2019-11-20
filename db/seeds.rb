@@ -18,13 +18,18 @@ addresses = ["Rua mourato coelho, 800",
               "Rua José Manoel Rodrigues, 458 - Cintra Gordinho",
               "Rua da Pátria, 809 - Vila Magini Mauá - SP"
             ]
+
+types = ["Churrasqueira a Gas", "Churrasqueira Eletrica", "Churrasqueira a Carvao"]
+
+prices = (10..30).to_a
+
 10.times do |i|
   grill = Grill.new(
     user: User.find(1),
-  	name: "churrasqueira #{i}",
+  	name: types.sample,
   	description: "descrição #{i}",
     address:  addresses[i],
-    price: i,
+    price: prices.sample,
     grills_type: true,
     status: true
   	)

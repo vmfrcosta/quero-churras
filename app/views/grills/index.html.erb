@@ -12,16 +12,15 @@
                 <div class="card-trip-infos">
                   <div>
                     <h4 class="card-title"><%= grill.name %> </h4>
-                    <h5 class="card-text"><%= grill.grills_type %> </h5>
                     <p class="card-text"><%= grill.address %> </p>
                   </div>
-                  <h2 class="card-trip-pricing"><%= grill.price %></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <h2 class="card-trip-pricing">R$<%= grill.price %></h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/caco08" class="card-trip-user avatar-bordered" />
                 </div>
               </div>
 
             <% end %>
-            <%= link_to "Add a new grill", new_grill_path(@grill), class: "btn btn-primary"%>          
+            <%= link_to "Add a new grill", new_grill_path(@grill), class: "btn btn-primary"%>
           </div>
     </div>
   </div>
