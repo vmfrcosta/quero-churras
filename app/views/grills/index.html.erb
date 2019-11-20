@@ -3,7 +3,7 @@
 <h1>All Grills</h1>
 <p>
 </p>
-  <div class="row">
+  <div class="row text-align">
     <% @grills.each do |grill| %>
      <!--  <div class="col-xs-12 col-md-4">
         <h2> <%= grill.name %> </h2>
@@ -12,13 +12,14 @@
         <%= link_to "Delete |", grill_path(grill), method: :delete if current_user == grill.user%>
 
       </div> -->
-      <div class="card" style="width: 18rem;">
-        <img src="https://www.campchef.com/media/catalog/product/cache/1/image/1200x675/e9c3970ab036de70892d86c6d221abfe/p/g/pg24sgwws_1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= grill.name %> </h5>
-          <p class="card-text"><%= grill.grills_type %> | <%= grill.address %> </p>
-          <%= link_to "Show", grill_path(grill), class:"btn btn-primary" %>
-        </div>
+      <div class="card m-3" style="width: 18rem;">
+        <%= link_to grill_path(grill), class:"btn" do %>
+          <img src="https://www.campchef.com/media/catalog/product/cache/1/image/1200x675/e9c3970ab036de70892d86c6d221abfe/p/g/pg24sgwws_1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= grill.name %> </h5>
+            <p class="card-text"><%= grill.grills_type %> | <%= grill.address %> </p>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

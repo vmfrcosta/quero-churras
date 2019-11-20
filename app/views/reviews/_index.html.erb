@@ -1,0 +1,12 @@
+<h3>Reviews</h3>
+<%= link_to 'Add a review!', new_grill_review_path(@grill), data: { toggle: 'modal', target: '#exampleModal' } %>
+<% @grill.reviews.each do |review| %>
+	<div class="card">
+		<h4>
+			<% review.stars.times do %>
+				<i class="fas fa-star"></i>
+			<% end %>
+		</h4>
+		<p><%= review.content %></p>
+	</div>
+<% end %>
