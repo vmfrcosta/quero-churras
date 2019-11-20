@@ -8,6 +8,12 @@
         <%= f.input :grills_type %>
         <%= f.input :address %>
         <%= f.input :price %>
+        <%= f.simple_fields_for :photos do |photo| %>
+          <%=render 'photo_fields', f: photo %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association 'Add Photo', f, :photos %>
+        </div>
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>

@@ -5,13 +5,6 @@
 </p>
   <div class="row">
     <% @grills.each do |grill| %>
-     <!--  <div class="col-xs-12 col-md-4">
-        <h2> <%= grill.name %> </h2>
-        <h4> <%= grill.grills_type %> | <%= grill.address %> </h4>
-        <%= link_to "Edit |", edit_grill_path(grill) if current_user == grill.user %>
-        <%= link_to "Delete |", grill_path(grill), method: :delete if current_user == grill.user%>
-
-      </div> -->
       <div class="card" style="width: 18rem;">
         <img src="https://www.campchef.com/media/catalog/product/cache/1/image/1200x675/e9c3970ab036de70892d86c6d221abfe/p/g/pg24sgwws_1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
