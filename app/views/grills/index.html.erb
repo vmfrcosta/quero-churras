@@ -2,26 +2,35 @@
 
   <div class="banner mb-3 rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://previews.123rf.com/images/nd3000/nd30001607/nd3000160700387/61040055-friends-camping-and-having-a-barbecue-in-nature.jpg);">
     <div class="container">
-      <h1>O churrasco <strong class="text-secondary">perfeito</strong> começa com uma boa  <strong class="text-secondary">churrasqueira!</strong></h1>
-      <input class="form-control string email optional rounded-pill pl-4 border-0 mt-4" autocomplete="email" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" placeholder="Qual o seu endereço?">
-      <input type="submit" name="commit" value="Escolha sua churrasqueira" class="btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" data-disable-with="Log in">
+      <h1>Precisa de uma churrasqueira para <strong>aquele churras</strong> com os  <strong>amigos?</strong></h1>
+      <%= form_tag nearby_grills_path, method: 'get' do %>
+        <%= text_field_tag :address, params[:address], class: "form-control string email optional rounded-pill pl-4 border-0 mt-4", placeholder: "Endereço" %>
+        <%= submit_tag 'Quero minha churrasqueira', class: "btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" %>
+      <% end %>
     </div>
   </div>
 
   <div class="container">
     <div class="text-primary">
       <div class="cards">
-        <% @grills.each do |grill| %>
-          <div class="card-trip m-2">
-            <%= link_to grill_path(grill), class:"btn" do %>
-              <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
-            <% end %>
-            
-            <div class="card-trip-infos">
-              <div>
-                <h4 class="card-title"><%= grill.name %> </h4>
-                <h5 class="card-text"><%= grill.grills_type %> </h5>
-                <p class="card-text"><%= grill.address %> </p>
+          <% @grills.each do |grill| %>
+
+            <div class="card-trip m-2">
+
+              <%= link_to grill_path(grill), class:"btn" do %>
+              <% if grill.photos.empty? %>
+                <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
+              <% else  %>
+              <%= cl_image_tag grill.photos.first.url %>
+              <% end %>
+              <% end %>
+              <div class="card-trip-infos">
+                <div>
+                  <h4 class="card-title"><%= grill.name %> </h4>
+                  <p class="card-text"><%= grill.address %> </p>
+                </div>
+                <h2 class="card-trip-pricing">R$ <%= grill.price %></h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
               </div>
               <h2 class="card-trip-pricing"><%= grill.price %></h2>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
