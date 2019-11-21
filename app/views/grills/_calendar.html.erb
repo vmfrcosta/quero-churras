@@ -6,7 +6,43 @@
 	          <%= f.input :check_out, as: :string, id: 'check-out', required: false, input_html: {class: "datepicker"} %>
 	          <%= f.input :address , as: :string, id: 'address' %>
 	          <%= f.button :submit, "Reservar", class: "btn btn-primary", data: { toggle: 'modal', target: '#bookingModal' }, id: 'submit-booking' %>
-	        <% end %>
+	        
     	</div>
 	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Confirm your booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-around">
+          <p><strong>Check in:</strong></p>
+          <p id='modal-check-in'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Check out:</strong></p>
+          <p id='modal-check-out'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Address:</strong></p>
+          <p id='modal-address'></p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <p><strong>Final price:</strong></p>
+          <p id='modal-price'></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		<%= f.submit 'Book it' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
