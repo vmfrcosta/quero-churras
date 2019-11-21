@@ -1,28 +1,46 @@
 <div class="container">
 	<div class="d-flex justify-content-around mt-3">
-		<div class="grill">
-			<h1><%= @grill.name %></h1>
-			<div class="grill-info p-3">
-				<p>Description: <%= @grill.description %></p>
-				<p>Address: <%= @grill.address %></p>
-				<p>Type: <%= @grill.grills_type %></p>
-				<p>Price: R$ <%= @grill.price %></p>
-			</div>
-		</div>
-		<div class="mt-3 d-flex flex-column align-items-center">
-			<h3>Liked the grill? Book it now!</h3>
-			<%= render 'calendar' %>
-		</div>
+    	<div class="grill">
+    		<h1><%= @grill.name %></h1>
+    		<div class="grill-info p-3">
+    			<p>Description: <%= @grill.description %></p>
+    			<p>Address: <%= @grill.address %></p>
+    			<p>Type: <%= @grill.grills_type %></p>
+    			<p>Price: R$ <%= @grill.price %>,00.</p>
+    		</div>
+    	</div>
+    	  <div class="mt-3 d-flex flex-column align-items-center">
+    <div class="container">
+      <div class="form-wrapper" style="width: 300px; margin: 0 auto;">
+        <h2>Select your experience!</h2>
+          <%= simple_form_for :search, method: "get" do |f| %>
+            <%= f.input :check_in, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :check_out, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :address , as: :string %>
+            <%= f.button :submit, "Reservar", class: "btn btn-primary" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
 	</div>
-</div>
-<div class="container">
-	<div class="review">
-		<%= render 'reviews/index' %>
-	</div>
+  <div class="container">
+  <div class="review">
+    <%= render 'reviews/index' %>
+  </div>
 </div>
 
 <div class="container">
-	<div class="review">
-		<%= render 'reviews/modal' %>
-	</div>
+  <div class="review">
+    <%= render 'reviews/modal' %>
+  </div>
 </div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+  </div>
+</div>
+

@@ -29,6 +29,22 @@ class GrillsController < ApplicationController
   end
 
   def show
+    @markers = [
+      {
+        lat: @grill.latitude,
+        lng: @grill.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { grill: grill }),
+        # image_url: helpers.asset_url('pokeball.png')
+      }]
+
+    # @grills = Grill.geocoded #returns grills with coordinates
+
+    # @markers = @grills.map do |grill|
+    #   {
+    #     lat: grill.latitude,
+    #     lng: grill.longitude
+    #   }
+    # end
     @review = Review.new
   end
 
