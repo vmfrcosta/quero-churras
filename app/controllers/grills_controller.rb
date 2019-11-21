@@ -46,6 +46,7 @@ class GrillsController < ApplicationController
     #   }
     # end
     @review = Review.new
+    @booking = Booking.new
   end
 
   def update
