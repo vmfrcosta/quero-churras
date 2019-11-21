@@ -5,17 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Grill.destroy_all
 Booking.destroy_all
+Grill.destroy_all
+
+addresses = ["Rua Mourato Coelho, 800 - SP",
+              "Rua Oscar Freire, 2008 - SP",
+              "Rua Rodrigues de Abreu, 291 - Itaguá - SP",
+              "Rua Catão, 618 - SP" ,
+              "Rua Iaiá, 213 - SP",
+              "Rua Epeira, 192 - Alto de Pinheiros São Paulo - SP",
+              "Avenida Santo Antônio, 815",
+              "Rua José Manoel Rodrigues, 458 - Cintra Gordinho",
+              "Rua da Pátria, 809 - Vila Magini Mauá - SP"
+            ]
+
+types = ["Churrasqueira a Gas", "Churrasqueira Eletrica", "Churrasqueira a Carvao"]
+
+prices = (10..30).to_a
 
 10.times do |i|
   grill = Grill.new(
     user: User.find(1),
-  	name: "churrasqueira #{i}",
+  	name: types.sample,
   	description: "descrição #{i}",
-    address: "Endereço #{i}",
-    price: i,
-    grills_type: true,
+    address:  addresses[i],
+    price: prices.sample,
+    grills_type: types.sample,
     status: true
   	)
   grill.save
@@ -25,6 +40,7 @@ Booking.destroy_all
   	grill: grill,
   	check_in: Date.today,
   	check_out: Date.today,
-  	address: "Endereço #{i * 10}")
+  	address: addresses[i]
+    )
   booking.save
 end
