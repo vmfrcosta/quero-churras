@@ -55,7 +55,8 @@ class GrillsController < ApplicationController
       :address,
       :grills_type,
       :price,
-      :status
+      :status,
+      photos_attributes: [:id, :url, :url_cache, :grill_id, :_destroy]
     )
   end
 
