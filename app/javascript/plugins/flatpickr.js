@@ -3,7 +3,7 @@ import "flatpickr/dist/flatpickr.min.css"
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 
 flatpickr(".datepicker", {
-  enableTime: false,
+  enableTime: true,
   altInput: true,
   allowInput: true,
   confirmText: "OK ",

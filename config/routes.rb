@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :destroy, :edit, :update]
   get 'my_grills', to: 'grills#my_grills', as: 'my_grills'
-
 end
