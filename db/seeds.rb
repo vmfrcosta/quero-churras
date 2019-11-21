@@ -8,11 +8,11 @@
 Booking.destroy_all
 Grill.destroy_all
 
-addresses = ["Rua mourato coelho, 800",
-              "Rua Oscar Freire, 2008",
-              "Rua Rodrigues de Abreu, 291 - Itaguá",
-              "Rua Catão, 618",
-              "Rua Iaiá, 213",
+addresses = ["Rua Mourato Coelho, 800 - SP",
+              "Rua Oscar Freire, 2008 - SP",
+              "Rua Rodrigues de Abreu, 291 - Itaguá - SP",
+              "Rua Catão, 618 - SP" ,
+              "Rua Iaiá, 213 - SP",
               "Rua Epeira, 192 - Alto de Pinheiros São Paulo - SP",
               "Avenida Santo Antônio, 815",
               "Rua José Manoel Rodrigues, 458 - Cintra Gordinho",
@@ -30,7 +30,7 @@ prices = (10..30).to_a
   	description: "descrição #{i}",
     address:  addresses[i],
     price: prices.sample,
-    grills_type: true,
+    grills_type: types.sample,
     status: true
   	)
   grill.save
