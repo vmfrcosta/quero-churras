@@ -30,7 +30,6 @@ class GrillsController < ApplicationController
 
   def show
     @review = Review.new
-    @booking = Booking.new
   end
 
   def update

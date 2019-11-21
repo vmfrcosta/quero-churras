@@ -1,7 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :set_grill, only: [:new, :create]
-
   def index
     @booking = Booking.all
   end
@@ -10,6 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @grill = Grill.find(params[:grill_id])
     @booking.user = current_user
     @booking = Booking.new
   end
@@ -17,9 +16,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.grill = @grill
     if @booking.save
-      redirect_to grill_path(@grill)
+      redirect_to @booking
     else
       render :new
     end
@@ -38,9 +36,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:check_in, :check_out, :address, :grill_id)
-  end
-
-  def set_grill
-    @grill = Grill.find(params[:grill_id])
   end
 end
