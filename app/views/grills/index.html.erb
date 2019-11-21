@@ -3,10 +3,8 @@
   <div class="banner mb-3 rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://previews.123rf.com/images/nd3000/nd30001607/nd3000160700387/61040055-friends-camping-and-having-a-barbecue-in-nature.jpg);">
     <div class="container">
       <h1>Precisa de uma churrasqueira para <strong>aquele churras</strong> com os  <strong>amigos?</strong></h1>
-      <%= form_tag nearby_grills_path, method: :get do %>
-        <%= text_field_tag :address, params[:address], class: 'form-control string email optional rounded-pill pl-4 border-0 mt-4', placeholder: 'Endereço' %>
-        <%= submit_tag 'Quero minha churrasqueira', class: "btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" %>
-      <% end %>
+      <input class="form-control string email optional rounded-pill pl-4 border-0 mt-4" autocomplete="email" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" placeholder="Qual o seu endereço?">
+      <input type="submit" name="commit" value="Quero minha churrasqueira" class="btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" data-disable-with="Log in">
     </div>
   </div>
 

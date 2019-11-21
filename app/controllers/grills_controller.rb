@@ -62,11 +62,6 @@ class GrillsController < ApplicationController
     redirect_to grills_path
   end
 
-  def nearby
-    @address = params[:address]
-    @grills = Grill.near()
-  end
-
   private
 
   def grill_params
