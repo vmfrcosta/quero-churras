@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2019_11_20_192542) do
     t.boolean "status"
     t.bigint "user_id"
     t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_grills_on_user_id"
   end
 

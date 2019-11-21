@@ -4,7 +4,7 @@
     <div class="container">
       <h1>Precisa de uma churrasqueira para <strong>aquele churras</strong> com os  <strong>amigos?</strong></h1>
       <input class="form-control string email optional rounded-pill pl-4 border-0 mt-4" autocomplete="email" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" placeholder="Qual o seu endereço?">
-      <input type="submit" name="commit" value="Quero minha churrasqueira" class="btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" data-disable-with="Log in">    
+      <input type="submit" name="commit" value="Quero minha churrasqueira" class="btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" data-disable-with="Log in">
     </div>
   </div>
 
@@ -12,7 +12,6 @@
     <div class="text-primary">
       <div class="cards">
         <% @grills.each do |grill| %>
-
           <div class="card-trip m-2">
             <%= link_to grill_path(grill), class:"btn" do %>
               <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
