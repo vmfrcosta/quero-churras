@@ -1,7 +1,7 @@
 class Grill < ApplicationRecord
   has_many :bookings
   has_many :photos, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   belongs_to :user
 
