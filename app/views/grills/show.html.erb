@@ -26,13 +26,25 @@
 			<%= render 'calendar' %>
 		</div>
 	</div>
-</div>
-<div class="container">
-	<div class="review">
-		<%= render 'reviews/index' %>
-	</div>
+  <div class="container">
+  <div class="review">
+    <%= render 'reviews/index' %>
+  </div>
 </div>
 
+<div class="container">
+  <div class="review">
+    <%= render 'reviews/modal' %>
+  </div>
+</div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+  </div>
+</div>
 <div class="container">
 	<div class="review">
 		<%= render 'reviews/modal' %>
@@ -44,3 +56,4 @@
 		<%= render 'bookings/modal' %>
 	</div>
 </div>
+
