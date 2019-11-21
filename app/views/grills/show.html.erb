@@ -1,6 +1,10 @@
-<div class="container">
-	<div class="d-flex justify-content-around mt-3">
-		<div class="grill">
+<div class="card-category rounded-0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  Breakfast
+</div>
+
+<div class="container grills">
+
+		<div class="grill-description">
 			<h1><%= @grill.name %></h1>
 			<div class="grill-info p-3">
 				<div class="description d-flex justify-content-between">
@@ -21,12 +25,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-3 d-flex flex-column align-items-center">
+
+		<div class="offset-1 mt-3 d-flex flex-column align-items-center">
 			<h3>Liked the grill? Book it now!</h3>
 			<%= render 'calendar' %>
 		</div>
-	</div>
+
 </div>
+
 <div class="container">
 	<div class="review">
 		<%= render 'reviews/index' %>
