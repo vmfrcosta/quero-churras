@@ -1,6 +1,8 @@
 <%= simple_form_for [@grill, @review] do |f| %>
-  <%= f.label :stars %>
-  <%= f.select :stars, [0, 1, 2, 3, 4, 5] %>
-  <%= f.input :content %>
-  <%= f.submit 'Add review' %>
+  <div class="d-flex flex-column">
+	  <%= f.label :Estrelas %>
+	  <%= f.select :stars, [5, 4, 3, 2, 1], class: 'btn' %>
+  </div>
+  <%= f.input :content, label: 'Comentário' %>
+  <%= f.submit 'Add review', class: 'btn btn-secondary' %>
 <% end %>

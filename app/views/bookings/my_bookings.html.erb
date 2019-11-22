@@ -6,6 +6,9 @@
           <div class="text-primary">
             <div class="bookings mt-3 d-flex flex-column">
               <h1 class="mb-3">Minhas Reservas</h1>
+              <% if @bookings.empty? %>
+                <h2>Você não possui nenhuma reserva!</h2>
+              <% else %>
               <% @bookings.each_with_index do |booking, ind| %>
                   <%= link_to grill_path(booking.grill), class:"btn px-0" do %>
 
@@ -25,12 +28,11 @@
 
                   <% end %>
                 <% end %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <%= render "shared/footer" %>
 </div>
-

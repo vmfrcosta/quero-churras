@@ -1,18 +1,32 @@
-  <div class="container">
+<div class="container">
+  <div class="text-primary">
+    <div class="cards">
+      <% @grills.each do |grill| %>
 
-  <h1>My Grills</h1>
+        <div class="card-trip m-2">
+          <%= link_to grill_path(grill), class:"btn" do %>
+            <% if grill.photos.empty? %>
+              <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
+            <% else  %>
+            <%= cl_image_tag grill.photos.first.url %>
+            <% end %>
+          <% end %>
 
-    <%@grills.each do |grill|%>
-      <div class="card-description"><%=grill.name%></div>
+          <div class="card-trip-infos">
+            <div>
+              <h4 class="card-title block-with-text mb-2"><%= grill.name %> </h4>
+              <p class="card-text mr-2"><%= grill.address %> </p>
+              <h2 class="card-trip-pricing text-secondary mt-2">R$ <%= grill.price %></h2>
+            </div>
+            <% if grill.user.photo.present? %>
+              <%= cl_image_tag grill.user.photo, class:"card-trip-user avatar-bordered" %>
+            <% else %>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            <% end %>
+          </div>
+        </div>
 
-        <%= link_to "Edit |", edit_grill_path(grill) %>
-        <%= link_to "Delete", grill_path(grill), method: :delete %>
-    <% end %>
-
-      </p>
-
-    <%= link_to "Add your Grill", new_grill_path, class: "btn btn-primary" %>
-
-  </p>
-
+      <% end %>        
+    </div>
+  </div>
 </div>

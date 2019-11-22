@@ -3,24 +3,24 @@
     <div class="row align-items-center">
       <div class="col-sm-12 offset-md-3 col-md-6 text-primary">
         <div class="container">
-          <h2 class="mt-5 pt-5 mb-3 ml-4"><strong>Adicionar churrasqueira</strong></h2>
+          <h2 class="pt-5 mb-3 ml-4"><strong>Adicionar churrasqueira</strong></h2>
 
             <%= simple_form_for(@grill) do |f| %>
               <%= f.error_notification %>
               <%= f.input :name, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
-                          input_html: { class: "rounded-pill pl-4 border-0" } %>
+                          input_html: { class: "rounded-pill pl-4 border-0" }, label: 'Nome da churrasqueira' %>
 
               <%= f.input :description, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
-                          input_html: { class: "rounded-pill pl-4 border-0" } %>
+                          input_html: { class: "rounded-pill pl-4 border-0" }, label: 'Descrição' %>
 
               <%= f.input :grills_type, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
-                          input_html: { class: "rounded-pill pl-4 border-0" } %>
+                          input_html: { class: "rounded-pill pl-4 border-0" }, label: 'Tipo' %>
 
               <%= f.input :address, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
-                          input_html: { class: "rounded-pill pl-4 border-0" } %>
+                          input_html: { class: "rounded-pill pl-4 border-0" }, label: 'Endereço de retirada' %>
 
               <%= f.input :price, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
-                          input_html: { class: "rounded-pill pl-4 border-0" } %>
+                          input_html: { class: "rounded-pill pl-4 border-0" }, label: 'Preço por dia' %>
 
               <%= f.simple_fields_for :photos do |photo| %>
                 <%=render 'photo_fields', f: photo %>
@@ -30,7 +30,7 @@
                 <%= link_to_add_association 'Add Photo', f, :photos %>
               </div>
 
-              <%= f.button :submit, class: "btn-secondary btn-block rounded-pill"  %>
+              <%= f.button :submit, class: "btn-secondary btn-block rounded-pill", value: 'Adicionar churrasqueira'  %>
 
             <% end %>
 
