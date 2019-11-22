@@ -11,20 +11,10 @@ const submitBooking = () => {
 	const modalAddress = document.querySelector('#modal-address')
 	const modalPrice = document.querySelector('#modal-price')
 
-	console.log(checkIn)
-	console.log(checkOut)
-	console.log(address)
-	console.log(submitBtn)
-	console.log(price)
-	console.log(modalCheckIn)
-	console.log(modalCheckOut)
-	console.log(modalAddress)
-	console.log(modalPrice)
-
 	submitBtn.addEventListener('click', (event) => {
 		event.preventDefault()
-		modalCheckIn.innerText = checkIn.value
-		modalCheckOut.innerText = checkOut.value
+		modalCheckIn.innerText = checkIn.value.split(" ")[0].split('-').reverse().join("-")
+		modalCheckOut.innerText = checkIn.value.split(" ")[2].split('-').reverse().join("-")
 		modalAddress.innerText = address.value
 		modalPrice.innerText = parseInt(price.innerText, 10) * ((new Date(checkOut.value) - new Date(checkIn.value)) / (60000 * 1440)) 
 	})
