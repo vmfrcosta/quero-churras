@@ -16,7 +16,7 @@ const submitBooking = () => {
 		modalCheckIn.innerText = checkIn.value.split(" ")[0].split('-').reverse().join("-")
 		modalCheckOut.innerText = checkIn.value.split(" ")[2].split('-').reverse().join("-")
 		modalAddress.innerText = address.value
-		modalPrice.innerText = parseInt(price.innerText, 10) * ((new Date(checkOut.value) - new Date(checkIn.value)) / (60000 * 1440)) 
+		modalPrice.innerText = "R$ " + parseInt(price.innerText, 10) * ((new Date(checkIn.value.split(" ")[2]) - new Date(checkIn.value.split(" ")[0])) / (60000 * 1440)) 
 	})
 }
 
