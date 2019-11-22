@@ -1,7 +1,7 @@
 <div class="bg">
 
   <div class="banner mb-3 rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://previews.123rf.com/images/nd3000/nd30001607/nd3000160700387/61040055-friends-camping-and-having-a-barbecue-in-nature.jpg);">
-    <div class="container">
+    <div class="container col-md-6">
       <h1>Precisa de uma churrasqueira para <strong>aquele churras</strong> com os  <strong>amigos?</strong></h1>
       <%= form_tag nearby_grills_path, method: 'get' do %>
         <%= text_field_tag :address, params[:address], class: "form-control string email optional rounded-pill pl-4 border-0 mt-4", placeholder: "Endereço do churrasco" %>
@@ -13,29 +13,28 @@
   <div class="container">
     <div class="text-primary">
       <div class="cards">
-          <% @grills.each do |grill| %>
+        <% @grills.each do |grill| %>
 
-            <div class="card-trip m-2">
-
-              <%= link_to grill_path(grill), class:"btn" do %>
+          <div class="card-trip m-2">
+            <%= link_to grill_path(grill), class:"btn" do %>
               <% if grill.photos.empty? %>
                 <img src="http://centerbox.com.br/wp-content/uploads/2018/06/210160-churrasco-guia-de-como-temperar-a-carne-como-um-profissional.jpg"/>
               <% else  %>
               <%= cl_image_tag grill.photos.first.url %>
               <% end %>
-              <% end %>
-              <div class="card-trip-infos">
-                <div>
-                  <h4 class="card-title"><%= grill.name %> </h4>
-                  <p class="card-text"><%= grill.address %> </p>
-                </div>
-                <h2 class="card-trip-pricing">R$ <%= grill.price %></h2>
-                <% if grill.user.photo.present? %>
-                  <%= cl_image_tag grill.user.photo, class:"card-trip-user avatar-bordered" %>
-                <% else %>
-                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
-                <% end %>
+            <% end %>
+
+            <div class="card-trip-infos">
+              <div>
+                <h4 class="card-title block-with-text mb-2"><%= grill.name %> </h4>
+                <p class="card-text mr-2"><%= grill.address %> </p>
+                <h2 class="card-trip-pricing text-secondary mt-2">R$ <%= grill.price %></h2>
               </div>
+              <% if grill.user.photo.present? %>
+                <%= cl_image_tag grill.user.photo, class:"card-trip-user avatar-bordered" %>
+              <% else %>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+              <% end %>
             </div>
           </div>
 
@@ -43,5 +42,5 @@
       </div>
     </div>
   </div>
-  <%= render "shared/footer" %>
 </div>
+<%= render "shared/footer" %>

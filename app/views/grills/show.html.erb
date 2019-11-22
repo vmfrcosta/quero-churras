@@ -1,6 +1,8 @@
 <div class="card-category rounded-0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
 	url(https://envato-shoebox-0.imgix.net/bbd1/dd3a-f091-4d67-a3bb-3ff1b6665de1/man_grilling_pork_chops_112308.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=bcb3dc991f2ae1685d6c605634a0165b)">
-  <h1 class="container"><strong><%= @grill.name %></strong></h1>
+  <div class="container">
+    <h1><strong><%= @grill.name %></strong></h1>
+  </div>
 </div>
 
 <div class="container grill my-3">
@@ -16,7 +18,10 @@
 			</div>
 			<div class="price d-flex justify-content-between ">
 				<p class="text-secondary"><strong>Valor da Diária:</strong></p>
-				<h3 class="text-secondary" id="price">R$ <%= @grill.price %></h3>	
+				<div class="d-flex">
+					<h3 class="text-secondary mr-2" id="price">R$</h3>
+					<h3 class="text-secondary" id="price"><%= @grill.price %></h3>
+				</div>	
 			</div>
 		</div>
 
