@@ -40,6 +40,11 @@
   margin: 0;
 }
 
+.card-trip-info {
+  position: absolute;
+  right: 16px;
+}
+
 .card-trip p {
   font-size: 12px;
   opacity: .7;
@@ -58,7 +63,7 @@
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
-  top: -20px;
+  top: -30px;
   width: 40px;
 }
 
