@@ -18,11 +18,11 @@
               <h2 class="card-trip-pricing">R$ <%= grill.price %></h2>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
-
-          </div>
-          <div class="d-flex justify-content-center mb-3">
+            <div class="d-flex justify-content-center mb-3">
+                <%= link_to 'Reservar', grill_path(grill), class: 'btn btn-secondary rounded-pill m-1 btn-block w-75 py-1' %>
               
             </div>
+          </div>
         <% end %>
     </div>
   </div>
