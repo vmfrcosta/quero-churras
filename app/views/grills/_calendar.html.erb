@@ -1,12 +1,24 @@
-<div class="mt-3 d-flex flex-column align-items-center">
-    <div class="container">
-      	<div class="form-wrapper" style="width: 300px; margin: 0 auto;">
-	        <%= simple_form_for [@grill, @booking] do |f| %>
-	          <%= f.input :check_in, as: :string, id: 'check-in', required: false, input_html: {class: "datepicker"} %>
-	          <%= f.input :check_out, as: :string, id: 'check-out', required: false, input_html: {class: "datepicker"} %>
-	          <%= f.input :address , as: :string, id: 'address' %>
-	          <%= f.button :submit, "Reservar", class: "btn btn-primary", data: { toggle: 'modal', target: '#bookingModal' }, id: 'submit-booking' %>
-    	</div>
+<div class="mt-3 d-flex flex-column">
+	<div class="form-wrapper">
+    <%= simple_form_for [@grill, @booking] do |f| %>
+      <%= f.input :check_in, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
+      as: :string, id: 'check-in',
+      required: false,
+      input_html: {class: "datepicker rounded-pill pl-4 border-0"} %>
+
+      <%= f.input :check_out, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
+      as: :string, id: 'check-out',
+      required: false,
+      input_html: {class: "datepicker rounded-pill pl-4 border-0"} %>
+
+      <%= f.input :address , label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
+      as: :string, id: 'address',
+      input_html: {class: "rounded-pill pl-4 border-0 mb-5"} %>
+
+      <%= f.button :submit, "Reservar",
+      class: "btn btn-secondary btn-block rounded-pill border-0 font-weight-bolder p-3",
+      data: { toggle: 'modal', target: '#bookingModal' },
+      id: 'submit-booking' %>
 	</div>
 </div>
 <!-- Modal -->
@@ -39,7 +51,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		<%= f.submit 'Book it' %>
+    		<%= f.submit 'Book it' %>
         <% end %>
       </div>
     </div>

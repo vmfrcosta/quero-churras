@@ -68,6 +68,10 @@
   grid-gap: 16px;
 }
 
+.price {
+  vertical-align: baseline;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
