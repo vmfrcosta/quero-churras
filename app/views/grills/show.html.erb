@@ -5,21 +5,21 @@
 			<div class="grill-info p-3">
 				<div class="description d-flex justify-content-between">
 					<p>Description:</p>
-					<p><%= @grill.description %></p>	
+					<p><%= @grill.description %></p>
 				</div>
 				<div class="address d-flex justify-content-between">
 					<p>Address:</p>
-					<p><%= @grill.address %></p>	
+					<p><%= @grill.address %></p>
 				</div>
 				<div class="type d-flex justify-content-between">
 					<p>Type:</p>
-					<p><%= @grill.grills_type %></p>	
+					<p><%= @grill.grills_type %></p>
 				</div>
 				<div class="price d-flex justify-content-between">
 					<p>Price:</p>
-					<p id="price"><%= @grill.price %></p>	
+					<p id="price"><%= @grill.price %></p>
 				</div>
-			</div>
+      </div>
 		</div>
 		<div class="mt-3 d-flex flex-column align-items-center">
 			<h3>Liked the grill? Book it now!</h3>
@@ -57,3 +57,26 @@
 	</div>
 </div>
 
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% @grill.photos.each_with_index do |photo, index| %>
+    <% if index == 0 %>
+    <div class="carousel-item active" >
+      <%= cl_image_tag photo.url, class: "d-block w-50" %>
+    </div>
+    <% else %>
+    <div class="carousel-item" >
+      <%= cl_image_tag photo.url, class: "d-block w-50" %>
+    </div>
+    <% end %>
+    <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>

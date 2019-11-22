@@ -62,6 +62,17 @@ class GrillsController < ApplicationController
     redirect_to grills_path
   end
 
+  def nearby
+    @address = "brazil #{params[:address]}"
+    @grill = Grill.new(name: 'tanto faz', description: 'não importa', address: @address, grills_type: 'carvão', price: 1, status: true)
+    @grill.geocode
+    @coordinates = [@grill.latitude, @grill.longitude]
+    # raise
+    # mapbox_info = JSON.parse(open("https://api.mapbox.com/geocoding/v5/mapbox.places/#{@address}.json?access_token=pk.eyJ1Ijoidm1mcmNvc3RhIiwiYSI6ImNrMmdmd2d3eDB1a3kzZHAweG45eHdodjgifQ.0VkfpeZaDQ86klNCbtxmxQ").read)
+    # @coordinates = mapbox_info['features'][1]['center'].reverse
+    @grills = Grill.near(@coordinates, 100).sort_by { |grill| grill.distance_from(@coordinates) }    # raise
+  end
+
   private
 
   def grill_params
