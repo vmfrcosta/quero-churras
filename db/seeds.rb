@@ -15,28 +15,28 @@ user_params = [
   password: '123456',
   first_name: 'Vinicius',
   last_name: 'Costa',
-  photo: 'https://avatars1.githubusercontent.com/u/51361326?v=4'
-}, 
+  remote_photo_url: 'https://avatars1.githubusercontent.com/u/51361326?v=4'
+},
 {
   email: 'carlos@gmail.com',
   password: '123456',
   first_name: 'Carlos',
   last_name: 'Antônio da Silva',
-  photo: 'https://avatars2.githubusercontent.com/u/55855139?v=4'
+  remote_photo_url: 'https://avatars2.githubusercontent.com/u/55855139?v=4'
 },
 {
   email: 'rhaniel@gmail.com',
   password: '123456',
   first_name: 'Rhaniel',
   last_name: 'Valle',
-  photo: 'https://avatars2.githubusercontent.com/u/56263436?v=4'
+  remote_photo_url: 'https://avatars0.githubusercontent.com/u/7490651?v=4'
 },
 {
   email: 'joao@gmail.com',
   password: '123456',
   first_name: 'João Vicente',
   last_name: 'Conte',
-  photo: 'https://avatars0.githubusercontent.com/u/7490651?v=4'
+  remote_photo_url: 'https://avatars2.githubusercontent.com/u/56263436?v=4'
 }
 ]
 
