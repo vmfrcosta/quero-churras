@@ -4,12 +4,12 @@
       <%= f.input :check_in, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'check-in',
       required: false,
-      input_html: {class: "datepicker rounded-pill pl-4 border-0"} %>
+      input_html: {class: "range_start rounded-pill pl-4 border-0"} %>
 
       <%= f.input :check_out, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'check-out',
       required: false,
-      input_html: {class: "datepicker rounded-pill pl-4 border-0"} %>
+      input_html: {class: "range_end rounded-pill pl-4 border-0"} %>
 
       <%= f.input :address , label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'address',
