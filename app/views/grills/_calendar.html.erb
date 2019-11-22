@@ -4,16 +4,16 @@
       <%= f.input :check_in, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'check-in',
       required: false,
-      input_html: {class: "range_start rounded-pill pl-4 border-0"} %>
+      input_html: {class: "range_start rounded-pill pl-4 border-0"}, label: 'Data de retirada' %>
 
       <%= f.input :check_out, label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'check-out',
       required: false,
-      input_html: {class: "range_end rounded-pill pl-4 border-0"} %>
+      input_html: {class: "range_end rounded-pill pl-4 border-0"}, label: 'Data de devolução' %>
 
       <%= f.input :address , label_html: { class: 'font-weight-bolder ml-4 text-black-50'},
       as: :string, id: 'address',
-      input_html: {class: "rounded-pill pl-4 border-0 mb-5"} %>
+      input_html: {class: "rounded-pill pl-4 border-0 mb-5"}, label: 'Endereço' %>
 
       <%= f.button :submit, "Reservar",
       class: "btn btn-secondary btn-block rounded-pill border-0 font-weight-bolder p-3",
@@ -26,26 +26,26 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="bookingModalLabel">Confirm your booking</h5>
+        <h5 class="modal-title" id="bookingModalLabel">Confirme as informações</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="d-flex justify-content-around">
-          <p><strong>Check in:</strong></p>
+          <p><strong>Data de retirada:</strong></p>
           <p id='modal-check-in'></p>
         </div>
         <div class="d-flex justify-content-around">
-          <p><strong>Check out:</strong></p>
+          <p><strong>Data de devolução:</strong></p>
           <p id='modal-check-out'></p>
         </div>
         <div class="d-flex justify-content-around">
-          <p><strong>Address:</strong></p>
+          <p><strong>Endereço:</strong></p>
           <p id='modal-address'></p>
         </div>
         <div class="d-flex justify-content-around">
-          <p><strong>Final price:</strong></p>
+          <p><strong>Valor total:</strong></p>
           <p id='modal-price'></p>
         </div>
       </div>
