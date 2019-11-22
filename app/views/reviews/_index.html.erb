@@ -1,12 +1,13 @@
-<h3>Reviews</h3>
-<%= link_to 'Add a review!', new_grill_review_path(@grill), data: { toggle: 'modal', target: '#reviewModal' } %>
+<!-- <h3>Reviews</h3> -->
+<%= link_to 'Add a review!', new_grill_review_path(@grill), data: { toggle: 'modal', target: '#reviewModal' },
+class: "btn btn-secondary my-4 px-4 py-2 rounded-pill border-0" %>
 <% @grill.reviews.each do |review| %>
-	<div class="card">
+	<div class="card p-4 mb-4 border-0 rounded-4">
 		<h4>
 			<% review.stars.times do %>
-				<i class="fas fa-star"></i>
+				<i class="fas fa-star text-secondary"></i>
 			<% end %>
 		</h4>
-		<p><%= review.content %></p>
+		<p class="text-black-50"><%= review.content %></p>
 	</div>
 <% end %>
