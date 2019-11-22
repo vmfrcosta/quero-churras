@@ -30,6 +30,21 @@ class BookingsController < ApplicationController
     redirect_to root_url
   end
 
+  def my_bookings
+    @bookings = current_user.bookings
+    @totals = []
+    total = 0
+    @bookings.each do |booking|
+      total = (booking.grill.price * (booking.check_out - booking.check_in))
+      if total.positive?
+        @totals << total
+      else
+        @totals << booking.grill.price
+      end
+      # raise
+    end
+  end
+
   private
 
   def set_booking

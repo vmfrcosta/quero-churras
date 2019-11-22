@@ -4,7 +4,7 @@
     <div class="container">
       <h1>Precisa de uma churrasqueira para <strong>aquele churras</strong> com os  <strong>amigos?</strong></h1>
       <%= form_tag nearby_grills_path, method: 'get' do %>
-        <%= text_field_tag :address, params[:address], class: "form-control string email optional rounded-pill pl-4 border-0 mt-4", placeholder: "Endereço" %>
+        <%= text_field_tag :address, params[:address], class: "form-control string email optional rounded-pill pl-4 border-0 mt-4", placeholder: "Endereço do churrasco" %>
         <%= submit_tag 'Quero minha churrasqueira', class: "btn btn-secondary btn-block rounded-pill mt-2 text-left pl-4" %>
       <% end %>
     </div>
@@ -30,7 +30,11 @@
                   <p class="card-text"><%= grill.address %> </p>
                 </div>
                 <h2 class="card-trip-pricing">R$ <%= grill.price %></h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                <% if grill.user.photo.present? %>
+                  <%= cl_image_tag grill.user.photo, class:"card-trip-user avatar-bordered" %>
+                <% else %>
+                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                <% end %>
               </div>
             </div>
           </div>
